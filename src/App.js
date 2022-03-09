@@ -9,21 +9,21 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [user, setUser] = useState(null);
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-  //   // user && JSON.parse(user) && setUser(JSON.parse(user));
-  //   user && JSON.parse(user) ? setUser(true) : setUser(false);
-  //   // if (user) {
-  //   //   setUser(user);
-  //   // }
-  // }, []);
-  // // const authenticate = (user) => {
-  // //   setUser(user);
-  // //   localStorage.setItem("user", user);
-  // // };
-  // useEffect(() => {
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    // user && JSON.parse(user) && setUser(JSON.parse(user));
+    user && JSON.parse(user) ? setUser(true) : setUser(false);
+    // if (user) {
+    //   setUser(user);
+    // }
+  }, []);
+  // const authenticate = (user) => {
+  //   setUser(user);
   //   localStorage.setItem("user", user);
-  // }, [user]);
+  // };
+  useEffect(() => {
+    localStorage.setItem("user", user);
+  }, [user]);
 
   return (
     <BrowserRouter>
